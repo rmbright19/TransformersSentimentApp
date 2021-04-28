@@ -10,6 +10,7 @@ from transformers import TFBertForSequenceClassification, TFTrainer, TFTrainingA
 import SentimentUtils as su
 
 try:
+  wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1-7amiTlMP_LBbKSYcLRuM-m3oE1KwWQ6' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1-7amiTlMP_LBbKSYcLRuM-m3oE1KwWQ6" -O tf_model.h5 && rm -rf /tmp/cookies.txt
   model = su.load_distilbert_model('./tf_model.h5', './config.json')
 except:
   st.error('Model not found')
